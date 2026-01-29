@@ -1,14 +1,17 @@
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private Vector3 dir;
-    [SerializeField] private Vector3 oldDir;
     [SerializeField] private Animator animator;
-    public float speed = 5;
+    [SerializeField] private Transform cam;
+    public float speed = 5f;
+
+    private Vector2 moveInput;
+    private Vector3 dir;
+    private Vector3 oldDir;
+
     public Actions curAction;
 
     public enum Actions
@@ -16,34 +19,50 @@ public class PlayerScript : MonoBehaviour
         Idle = 0,
         Walk = 1
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        Camera.main.farClipPlane = 5000f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        rb.AddForce(dir * speed * Time.deltaTime, ForceMode.Impulse);
-        
-        if(dir == Vector3.zero)
-        {
-            transform.rotation = Quaternion.LookRotation(oldDir);
+        Vector3 camForward = cam.forward;
+        camForward.y = 0;
+        camForward.Normalize();
 
-            if(curAction != Actions.Idle)
+        Vector3 camRight = cam.right;
+        camRight.y = 0;
+        camRight.Normalize();
+
+        dir = moveInput.x * camRight + moveInput.y * camForward;
+
+        rb.AddForce(dir * speed * Time.deltaTime, ForceMode.Impulse);
+
+        if (dir.sqrMagnitude < 0.01f)
+        {
+            if (oldDir != Vector3.zero)
+            {
+                Quaternion idleRot = Quaternion.LookRotation(oldDir);
+                rb.MoveRotation(Quaternion.Slerp(rb.rotation, idleRot, 5f * Time.deltaTime));
+            }
+
+            if (curAction != Actions.Idle)
             {
                 curAction = Actions.Idle;
                 animator.SetInteger("Action", (int)curAction);
             }
-            
         }
         else
         {
-            transform.rotation = Quaternion.LookRotation(dir);
             oldDir = dir;
+            Quaternion targetRot = Quaternion.LookRotation(dir);
+            rb.MoveRotation(Quaternion.Slerp(rb.rotation, targetRot, 10f * Time.deltaTime));
 
-            if(curAction != Actions.Walk)
+            if (curAction != Actions.Walk)
             {
                 curAction = Actions.Walk;
                 animator.SetInteger("Action", (int)curAction);
@@ -51,11 +70,8 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    public void Move(InputAction.CallbackContext context){
-        Vector2 orDir = context.ReadValue<Vector2>();
-
-        dir.x  = orDir.x;
-        dir.z = orDir.y;
+    public void Move(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
     }
-
 }
