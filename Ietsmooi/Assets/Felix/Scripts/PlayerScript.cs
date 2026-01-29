@@ -74,4 +74,11 @@ public class PlayerScript : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
     }
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Interact ");
+        }
+    }
 }
