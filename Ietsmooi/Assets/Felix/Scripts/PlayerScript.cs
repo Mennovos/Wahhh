@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Animator Horse;
     [SerializeField] private Transform cam;
+
     public float speed = 5f;
 
     private Vector2 moveInput;
@@ -14,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     private Vector3 oldDir;
 
     public Actions curAction;
+    public bool isInteracting;
 
     public enum Actions
     {
@@ -82,6 +84,7 @@ public class PlayerScript : MonoBehaviour
         if (context.performed)
         {
             Debug.Log("Interact");
+            isInteracting = true;
         }
     }
 }
