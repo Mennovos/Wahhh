@@ -139,6 +139,46 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 990210295}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: df70fa95-8a34-4494-b137-73ab6b9c7d37
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionId
+      value: 2412d2a1-9399-4323-90b0-2bc0a708a8d7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionId
+      value: 59fa3fc1-003b-490a-a3ca-81398989da28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_ActionId
+      value: a34df1f4-9215-42eb-883c-7bb54b842d3d
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[22].m_ActionId
+      value: 51e485f8-90de-4dfb-969b-c12accd075d7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionName
+      value: 'Horse/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionName
+      value: 'Horse/Look[/Mouse/delta]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_ActionName
+      value: 'Horse/Sprint[/Keyboard/leftShift]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[22].m_ActionName
+      value: Horse/Dismantle
+      objectReference: {fileID: 0}
     - target: {fileID: 1912616921003079693, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_Name
       value: Player 1
