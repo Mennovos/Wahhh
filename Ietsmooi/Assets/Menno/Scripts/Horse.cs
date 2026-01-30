@@ -6,6 +6,7 @@ public class Horse : MonoBehaviour
     [SerializeField] private GameObject horse;
     private PlayerScript playerScript;
     private bool Inrange;
+    public bool hasHorse;
     private void Start()
     {
         playerScript = FindFirstObjectByType<PlayerScript>();
@@ -16,6 +17,7 @@ public class Horse : MonoBehaviour
         Inrange = true;
         if (playerScript.isInteracting == true && Inrange == true)
         {
+            hasHorse = true;
             horse.SetActive(true);
             player.SetActive(false);
             Destroy(gameObject);
