@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 6275424147032223515}
   - component: {fileID: 1886211081545656142}
   - component: {fileID: 5715258424110643399}
+  - component: {fileID: 4462782367234208805}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -403,6 +404,21 @@ CapsuleCollider:
   m_Height: 3.8299842
   m_Direction: 1
   m_Center: {x: 0, y: 1.85, z: 0}
+--- !u!114 &4462782367234208805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912616921003079693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c895d0486997d948ba3670d12e5752b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHoldScript
+  hand: {fileID: 8071466064570000414}
+  allItems:
+  - {fileID: 11400000, guid: 456e3de5d8de27245840426ebc7f55f2, type: 2}
 --- !u!1 &4394228397022621779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,5 +1038,10 @@ Animator:
 --- !u!4 &7943380146239978557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6fc9d7e767d8dde4ba6d9e20e1e384d1, type: 3}
+  m_PrefabInstance: {fileID: 7617336659066706902}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8071466064570000414 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 6fc9d7e767d8dde4ba6d9e20e1e384d1, type: 3}
   m_PrefabInstance: {fileID: 7617336659066706902}
   m_PrefabAsset: {fileID: 0}
