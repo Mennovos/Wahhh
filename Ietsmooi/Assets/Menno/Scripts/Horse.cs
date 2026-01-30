@@ -6,7 +6,7 @@ public class Horse : MonoBehaviour
     [SerializeField] private GameObject horse;
     private PlayerScript playerScript;
     private bool Inrange;
-    private float range = 3f;
+    private float range = 5f;
     public bool hasHorse;
     private void Start()
     {
