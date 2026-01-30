@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Animator Horse;
     [SerializeField] private Transform cam;
+    [SerializeField] private AudioSource WalkAudioSource;
 
     public float speed = 5f;
 
@@ -58,6 +59,8 @@ public class PlayerScript : MonoBehaviour
                 curAction = Actions.Idle;
                 animator.SetInteger("Action", (int)curAction);
                 Horse.SetInteger("Action", (int)curAction);
+
+                WalkAudioSource.Stop();
             }
         }
         else
@@ -71,6 +74,8 @@ public class PlayerScript : MonoBehaviour
                 curAction = Actions.Walk;
                 animator.SetInteger("Action", (int)curAction);
                 Horse.SetInteger("Action", (int)curAction);
+
+                WalkAudioSource.Play();
             }
         }
     }
