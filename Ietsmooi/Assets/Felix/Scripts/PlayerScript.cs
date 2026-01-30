@@ -114,6 +114,7 @@ public class PlayerScript : MonoBehaviour
     }
     public void Interact()
     {
+        Debug.Log("Interacted");
         isInteracting = true;
     }
     public void Jump()
