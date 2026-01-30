@@ -26,7 +26,7 @@ public class PlayerScript : MonoBehaviour
     public enum Actions
     {
         Idle = 0,
-        Walk = 1
+        Walk = 1,
     }
     private void Awake()
     {
