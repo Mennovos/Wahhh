@@ -9,6 +9,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Transform cam;
     [SerializeField] private AudioSource WalkAudioSource;
 
+    private Horse horse;
+
     public float speed = 5f;
 
     private Vector2 moveInput;
@@ -26,6 +28,7 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        horse = FindFirstObjectByType<Horse>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -77,6 +80,14 @@ public class PlayerScript : MonoBehaviour
 
                 WalkAudioSource.Play();
             }
+        }
+        if(horse.hasHorse == true)
+        {
+            speed = 300f;
+        }
+        else
+        {
+            speed = 150f;
         }
     }
 
