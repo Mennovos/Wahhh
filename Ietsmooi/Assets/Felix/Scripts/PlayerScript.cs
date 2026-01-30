@@ -5,6 +5,7 @@ public class PlayerScript : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Animator animator;
+    [SerializeField] private Animator Horse;
     [SerializeField] private Transform cam;
     public float speed = 5f;
 
@@ -54,6 +55,7 @@ public class PlayerScript : MonoBehaviour
             {
                 curAction = Actions.Idle;
                 animator.SetInteger("Action", (int)curAction);
+                Horse.SetInteger("Action", (int)curAction);
             }
         }
         else
@@ -66,6 +68,7 @@ public class PlayerScript : MonoBehaviour
             {
                 curAction = Actions.Walk;
                 animator.SetInteger("Action", (int)curAction);
+                Horse.SetInteger("Action", (int)curAction);
             }
         }
     }
