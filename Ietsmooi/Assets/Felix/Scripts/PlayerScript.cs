@@ -33,8 +33,12 @@ public class PlayerScript : MonoBehaviour
         controls = new Controls();
 
         controls.Player.Enable();
+
         controls.Player.Move.performed += Move;
         controls.Player.Move.canceled += Move;
+
+        controls.Player.Interact.performed += ctx => Interact();
+        controls.Player.Jump.performed += ctx => Jump();
     }
 
     void Start()
