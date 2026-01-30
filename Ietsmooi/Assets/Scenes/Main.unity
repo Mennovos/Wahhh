@@ -208,9 +208,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2112726991}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -805, y: -406}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 155, y: 134}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87488903
@@ -2077,6 +2077,10 @@ PrefabInstance:
       value: map2-0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d008ac7fb95ebd9478dbc13b692cc42c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d008ac7fb95ebd9478dbc13b692cc42c, type: 3}
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
@@ -2768,7 +2772,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1242218666}
   - component: {fileID: 1242218669}
-  - component: {fileID: 1242218668}
   - component: {fileID: 1242218667}
   m_Layer: 0
   m_Name: Minimap camera
@@ -2786,7 +2789,7 @@ Transform:
   m_GameObject: {fileID: 1242218665}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5987049, y: -0.000000010077611, z: 0.000000015417385, w: 0.8009698}
-  m_LocalPosition: {x: 0.569824, y: 20.450998, z: -1.311593}
+  m_LocalPosition: {x: -0.31005877, y: 20.248756, z: -1.8656816}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2836,14 +2839,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!81 &1242218668
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1242218665}
-  m_Enabled: 1
 --- !u!20 &1242218669
 Camera:
   m_ObjectHideFlags: 0
@@ -2854,7 +2849,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.047169805, g: 0.03849234, b: 0.03849234, a: 1}
+  m_BackGroundColor: {r: 1, g: 0.6055647, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2878,7 +2873,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
