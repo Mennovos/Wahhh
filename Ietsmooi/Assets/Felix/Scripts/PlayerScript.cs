@@ -81,7 +81,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Interact ");
+            Debug.Log("Interact");
         }
     }
 }
