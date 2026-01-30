@@ -10,12 +10,15 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private AudioSource WalkAudioSource;
 
     private Horse horse;
+    private Controls controls;
 
     public float speed = 5f;
 
     private Vector2 moveInput;
     private Vector3 dir;
     private Vector3 oldDir;
+
+    [SerializeField] private bool grounded;
 
     public Actions curAction;
     public bool isInteracting;
@@ -24,6 +27,14 @@ public class PlayerScript : MonoBehaviour
     {
         Idle = 0,
         Walk = 1
+    }
+    private void Awake()
+    {
+        controls = new Controls();
+
+        controls.Player.Enable();
+        controls.Player.Move.performed += Move;
+        controls.Player.Move.canceled += Move;
     }
 
     void Start()
@@ -81,7 +92,9 @@ public class PlayerScript : MonoBehaviour
                 WalkAudioSource.Play();
             }
         }
-        if(horse.hasHorse == true)
+
+        //horese speed adjustment
+        if (horse.hasHorse == true)
         {
             speed = 300f;
         }
@@ -98,5 +111,28 @@ public class PlayerScript : MonoBehaviour
     public void Interact()
     {
         isInteracting = true;
+    }
+    public void Jump()
+    {
+        if (grounded)
+        {
+            if (horse.hasHorse == true)
+            {
+                rb.AddForce(Vector3.up * 3500f);
+            }
+            else
+            {
+                rb.AddForce(Vector3.up * 3000f);
+            }
+            grounded = false;
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        //check grounded
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            grounded = true;
+        }
     }
 }
