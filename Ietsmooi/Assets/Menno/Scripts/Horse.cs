@@ -8,8 +8,8 @@ public class Horse : MonoBehaviour
     private bool Inrange;
     private void Start()
     {
-        horse.SetActive(false);
         playerScript = FindFirstObjectByType<PlayerScript>();
+        horse.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +18,7 @@ public class Horse : MonoBehaviour
         {
             horse.SetActive(true);
             player.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }

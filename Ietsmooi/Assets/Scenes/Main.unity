@@ -255,7 +255,7 @@ PrefabInstance:
       objectReference: {fileID: 990210295}
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_DefaultActionMap
-      value: df70fa95-8a34-4494-b137-73ab6b9c7d37
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_ActionEvents.Array.size
@@ -293,9 +293,37 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[22].m_ActionName
       value: Horse/Dismantle
       objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 475186998}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1912616921003079693, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_Name
-      value: Player 1
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2880623592970460543, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_LocalPosition.x
@@ -923,6 +951,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb0be669e310a6546981efddab647207, type: 3}
+--- !u!114 &475186998 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1615341595940782095, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+  m_PrefabInstance: {fileID: 93756864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fd2c972c4034f4eb97475e70e0a021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
 --- !u!1 &508439880 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3901960882413213612, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
@@ -3261,7 +3300,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4690221153253166497, guid: 00c535981edf0aa40aa9799b2a31806b, type: 3}
       propertyPath: m_Name
-      value: Deer_001
+      value: PlaceHolder
       objectReference: {fileID: 0}
     - target: {fileID: 5358390638895027995, guid: 00c535981edf0aa40aa9799b2a31806b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3302,10 +3341,6 @@ PrefabInstance:
     - target: {fileID: 5358390638895027995, guid: 00c535981edf0aa40aa9799b2a31806b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5422850175073213385, guid: 00c535981edf0aa40aa9799b2a31806b, type: 3}
-      propertyPath: m_Mass
-      value: 100000000
       objectReference: {fileID: 0}
     - target: {fileID: 5422850175073213385, guid: 00c535981edf0aa40aa9799b2a31806b, type: 3}
       propertyPath: m_Constraints
