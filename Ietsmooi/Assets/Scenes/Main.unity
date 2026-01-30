@@ -527,6 +527,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8305920279695770702, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       insertIndex: 0
       addedObject: {fileID: 398229169}
+    - targetCorrespondingSourceObject: {fileID: 8305920279695770702, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1242218666}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
 --- !u!4 &93756865 stripped
@@ -2788,11 +2791,11 @@ Transform:
   m_GameObject: {fileID: 1242218665}
   serializedVersion: 2
   m_LocalRotation: {x: 0.72900724, y: -0, z: -0, w: 0.68450606}
-  m_LocalPosition: {x: -2570.21, y: 86.65, z: -3382.91}
+  m_LocalPosition: {x: -0.3100586, y: 180, z: 1.1901855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1811956879}
   m_LocalEulerAnglesHint: {x: 93.60602, y: 0, z: 0}
 --- !u!114 &1242218667
 MonoBehaviour:
@@ -2806,7 +2809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
-  m_RenderShadows: 1
+  m_RenderShadows: 0
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -2814,7 +2817,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 0
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
@@ -4460,7 +4463,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1242218666}
   - {fileID: 990210296}
   - {fileID: 1730218786}
   - {fileID: 93756864}
