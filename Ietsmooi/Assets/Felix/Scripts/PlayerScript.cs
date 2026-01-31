@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Animator Horse;
     [SerializeField] private Transform cam;
+    [SerializeField] private GameObject Settings;
     [SerializeField] private AudioSource WalkAudioSource;
 
     private Horse horse;
@@ -28,6 +30,7 @@ public class PlayerScript : MonoBehaviour
         Idle = 0,
         Walk = 1,
     }
+    private int pressed;
     private void Awake()
     {
         controls = new Controls();
@@ -39,11 +42,15 @@ public class PlayerScript : MonoBehaviour
 
         controls.Player.Interact.performed += ctx => Interact();
         controls.Player.Jump.performed += ctx => Jump();
+        controls.Player.Map.performed += ctx => LoadMap();
     }
 
     void Start()
     {
+        Settings.SetActive(false);
+
         horse = FindFirstObjectByType<Horse>();
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -139,5 +146,21 @@ public class PlayerScript : MonoBehaviour
         {
             grounded = true;
         }
+    }
+
+    public void LoadMap()
+    {
+        Settings.SetActive(true);
+        pressed++;
+        if(pressed == 2)
+        {
+            Settings.SetActive(false);
+            pressed = 0;
+        }
+    }
+    public void CloseSettings()
+    {
+        Settings.SetActive(false);
+        Debug.Log("Map closed");
     }
 }
