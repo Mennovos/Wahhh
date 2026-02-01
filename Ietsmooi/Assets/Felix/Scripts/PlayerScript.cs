@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PlayerScript : MonoBehaviour, IDataPersistence
 {
@@ -118,6 +119,7 @@ public class PlayerScript : MonoBehaviour, IDataPersistence
         {
             speed = 150f;
         }
+
     }
 
     public void Move(InputAction.CallbackContext context)
