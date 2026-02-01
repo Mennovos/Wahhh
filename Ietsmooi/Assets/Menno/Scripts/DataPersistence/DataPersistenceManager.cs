@@ -37,7 +37,10 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
-        if(this.gameData == null)
+        // Load any saved data from a file using the data handler
+        this.gameData = dataHandler.Load();
+
+        if (this.gameData == null)
         {
             Debug.Log("No data found. Initializing data to defaults.");
             NewGame();
@@ -46,7 +49,6 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObj.LoadData(gameData);
         }   
-        Debug.Log("Loaded death count =" + gameData.deathCount);
     }
 
     public void SaveGame()
@@ -55,8 +57,9 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObj.SaveData(data: ref gameData);
         }
-        Debug.Log("Saved death count =" + gameData.deathCount);
-    }   
+        //save data to a file using the data handler
+        dataHandler.Save(gameData);
+    }
     private void OnApplicationQuit()
     {
         SaveGame();
