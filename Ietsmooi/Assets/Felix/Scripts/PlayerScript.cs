@@ -27,10 +27,9 @@ public class PlayerScript : MonoBehaviour, IDataPersistence
     public bool isInteracting;
 
 
-    // tijdelijke health en death ui update
+    // tijdelijke health
     public int health = 100;
-    private int deathCount = 0;
-    [SerializeField] private TextMeshProUGUI Deathcount;
+   
     public enum Actions
     {
         Idle = 0,
@@ -119,13 +118,6 @@ public class PlayerScript : MonoBehaviour, IDataPersistence
         {
             speed = 150f;
         }
-
-        //temporary health and death ui update
-        if (health <= 0)
-        {
-            deathCount++;
-            Deathcount.text = "Death Amount: " + deathCount;
-        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -187,10 +179,10 @@ public class PlayerScript : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        this.deathCount = data.deathCount;
+        this.transform.position = data.playerPosition;
     }
     public void SaveData(ref GameData data)
     {
-        data.deathCount = this.deathCount;
+        data.playerPosition = this.transform.position;
     }
 }
