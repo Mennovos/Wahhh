@@ -1,8 +1,9 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Animator animator;
@@ -28,7 +29,8 @@ public class PlayerScript : MonoBehaviour
 
     // tijdelijke health en death ui update
     public int health = 100;
-    [SerializeField] private Image healthBar;
+    private int deathCount = 0;
+    [SerializeField] private TextMeshProUGUI Deathcount;
     public enum Actions
     {
         Idle = 0,
@@ -118,9 +120,11 @@ public class PlayerScript : MonoBehaviour
             speed = 150f;
         }
 
-        if(health <= 0)
+        //temporary health and death ui update
+        if (health <= 0)
         {
-            Debug.Log("Player is dead");
+            deathCount++;
+            Deathcount.text = "Death Amount: " + deathCount;
         }
     }
 
@@ -128,11 +132,15 @@ public class PlayerScript : MonoBehaviour
     {
         moveInput = context.ReadValue<Vector2>();
     }
+
+
     public void Interact()
     {
         Debug.Log("Interacted");
         isInteracting = true;
     }
+
+
     public void Jump()
     {
         if (grounded)
@@ -148,6 +156,7 @@ public class PlayerScript : MonoBehaviour
             grounded = false;
         }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         //check grounded
@@ -156,6 +165,7 @@ public class PlayerScript : MonoBehaviour
             grounded = true;
         }
     }
+
 
     public void LoadMap()
     {
@@ -167,9 +177,20 @@ public class PlayerScript : MonoBehaviour
             pressed = 0;
         }
     }
+
+
     public void CloseSettings()
     {
         Settings.SetActive(false);
-        Debug.Log("Map closed");
+    }
+
+
+    public void LoadData(GameData data)
+    {
+        this.deathCount = data.deathCount;
+    }
+    public void SaveData(ref GameData data)
+    {
+        data.deathCount = this.deathCount;
     }
 }
