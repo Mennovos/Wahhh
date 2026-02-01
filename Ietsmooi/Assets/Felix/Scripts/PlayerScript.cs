@@ -25,6 +25,10 @@ public class PlayerScript : MonoBehaviour
     public Actions curAction;
     public bool isInteracting;
 
+
+    // tijdelijke health en death ui update
+    public int health = 100;
+    [SerializeField] private Image healthBar;
     public enum Actions
     {
         Idle = 0,
@@ -112,6 +116,11 @@ public class PlayerScript : MonoBehaviour
         else
         {
             speed = 150f;
+        }
+
+        if(health <= 0)
+        {
+            Debug.Log("Player is dead");
         }
     }
 
