@@ -206,7 +206,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""id"": ""af704481-5930-4b7d-b53a-a1bd19aecc9b"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap"",
                     ""initialStateCheck"": true
                 }
             ],

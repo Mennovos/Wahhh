@@ -348,7 +348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 26
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_ActionId
@@ -373,6 +373,10 @@ PrefabInstance:
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_ActionEvents.Array.data[24].m_ActionId
       value: 324982f2-028d-4627-ba43-4f16d55eb104
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_ActionId
+      value: af704481-5930-4b7d-b53a-a1bd19aecc9b
       objectReference: {fileID: 0}
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_ActionName
@@ -401,6 +405,10 @@ PrefabInstance:
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_ActionEvents.Array.data[25].m_ActionName
       value: 'Player/OpenPhone[/Keyboard/p]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_ActionName
+      value: 'Player/PhoneNavigate[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
       objectReference: {fileID: 0}
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
@@ -439,6 +447,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 475186998}
@@ -456,6 +468,10 @@ PrefabInstance:
       objectReference: {fileID: 475186998}
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_ActionEvents.Array.data[25].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 570361957}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 570361957}
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
@@ -491,6 +507,10 @@ PrefabInstance:
       value: TogglePhone
       objectReference: {fileID: 0}
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NavigatePhone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlayerScript, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -507,6 +527,10 @@ PrefabInstance:
       value: phone, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: phone, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -520,6 +544,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_ActionEvents.Array.data[25].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1886211081545656142, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ActionEvents.Array.data[26].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1912616921003079693, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
