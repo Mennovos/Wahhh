@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +11,9 @@ public class phone : MonoBehaviour
     [SerializeField] private Vector2[] heights = new Vector2[2];
     [SerializeField] private bool shouldMove = false;
     [SerializeField] private int framesTraveling = 0;
+    [SerializeField] private int[] cursorPos = new int[2];
+    public List<PhoneButton> phoneButtons = new List<PhoneButton>();
+    public List<PhoneScreen> phoneScreens = new List<PhoneScreen>();
     public bool isActive = false;
     public int moveSpeed;
     public int passWord = 0;
@@ -55,7 +59,6 @@ public class phone : MonoBehaviour
     {
         if (!context.performed) return;
 
-        isActive = !isActive;
         targetHeight = heights[Convert.ToInt32(isActive)].y;
         shouldMove = true;
         framesTraveling = 0;
@@ -64,7 +67,71 @@ public class phone : MonoBehaviour
         {
             
         }
-
+        
+        isActive = !isActive;
         Debug.Log("phone visible set to: " + isActive + " new height is: " + targetHeight);
+    }
+
+    //lowkey gotta rebuild the enitre UI system just because this fuckass camera yaaay
+    public void NavigatePhone(InputAction.CallbackContext context)
+    {
+        if(!isActive) return;
+
+        Vector2 dir = context.ReadValue<Vector2>();
+        Debug.Log(dir);
+
+        if(dir.x == 1 && dir.y == 0 && cursorPos[0] < 2)
+        {
+            cursorPos[0] += 1;
+        }else if(dir.x == -1 && dir.y == 0 && cursorPos[0] > 0)
+        {
+            cursorPos[0] -= 1;
+        }else if(dir.y == 1 && dir.x == 0 && cursorPos[1] > 0)
+        {
+            cursorPos[1] -= 1;
+        }else if(dir.y == -1 && dir.x == 0 && cursorPos[1] < 2)
+        {
+            cursorPos[1] += 1;
+        }
+    }
+
+}
+
+[System.Serializable]
+public class PhoneButton
+{
+    public GameObject button;
+    public int[] buttonPos = new int[2];
+    public string name;
+
+}
+
+[System.Serializable]
+public class PhoneScreen
+{
+    public GameObject screen;
+    public List<PhoneButton> buttonsOnScreen = new List<PhoneButton>();
+    public string name;
+    public int index = 999;
+
+    public int[] CalculateHeight()
+    {
+        int highestX = 0;
+        int highestY = 0;
+
+        foreach(PhoneButton b in buttonsOnScreen)
+        {
+            if(b.buttonPos[0] > highestX)
+            {
+                highestX = b.buttonPos[0];
+            }
+
+            if(b.buttonPos[1] > highestY)
+            {
+                highestY = b.buttonPos[1];
+            }
+        }
+
+        return new int[2] {highestX, highestY};
     }
 }
