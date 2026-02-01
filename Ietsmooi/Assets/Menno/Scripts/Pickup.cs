@@ -31,6 +31,7 @@ public class Pickup : MonoBehaviour, IDataPersistence
             //Instantiate(Soundeffect, transform.position, Quaternion.identity);
             gameManger.AddCoins();
             Destroy(gameObject);
+            collected = true;
         }
     }
 
