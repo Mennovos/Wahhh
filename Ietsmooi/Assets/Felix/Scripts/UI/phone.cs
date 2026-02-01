@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class phone : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class phone : MonoBehaviour
     [SerializeField] private bool shouldMove = false;
     [SerializeField] private int framesTraveling = 0;
     [SerializeField] private int[] cursorPos = new int[2];
+    [SerializeField] private int[] maxPos = new int[2];
     public List<PhoneButton> phoneButtons = new List<PhoneButton>();
     public List<PhoneScreen> phoneScreens = new List<PhoneScreen>();
     public bool isActive = false;
@@ -22,7 +24,7 @@ public class phone : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        InitPhone();
     }
 
     // Update is called once per frame
@@ -80,7 +82,7 @@ public class phone : MonoBehaviour
         Vector2 dir = context.ReadValue<Vector2>();
         Debug.Log(dir);
 
-        if(dir.x == 1 && dir.y == 0 && cursorPos[0] < 2)
+        if(dir.x == 1 && dir.y == 0 && cursorPos[0] < maxPos[0])
         {
             cursorPos[0] += 1;
         }else if(dir.x == -1 && dir.y == 0 && cursorPos[0] > 0)
@@ -89,10 +91,55 @@ public class phone : MonoBehaviour
         }else if(dir.y == 1 && dir.x == 0 && cursorPos[1] > 0)
         {
             cursorPos[1] -= 1;
-        }else if(dir.y == -1 && dir.x == 0 && cursorPos[1] < 2)
+        }else if(dir.y == -1 && dir.x == 0 && cursorPos[1] < maxPos[1])
         {
             cursorPos[1] += 1;
         }
+
+        PhoneButton pb = phoneButtons.Find(x => x.buttonPos[0] == cursorPos[0] && x.buttonPos[1] == cursorPos[1]);
+
+
+        SelectApp(pb.button.GetComponent<Image>());
+
+
+    }
+
+    private void InitPhone()
+    {
+        foreach(PhoneScreen s in phoneScreens)
+        {
+            s.thisScreenDimensions = s.CalculateHeight();
+            if(s.index != 0)
+            {
+                s.screen.SetActive(false);
+            }
+            else
+            {
+                SetScreen(0);
+            }
+        }
+    }
+
+    private void SetScreen(int screen)
+    {
+        foreach(PhoneScreen s in phoneScreens)
+        {
+            if(s.index != screen)
+            {
+                s.screen.SetActive(false);
+            }
+            else
+            {
+                s.screen.SetActive(true);
+                maxPos = s.thisScreenDimensions;
+                phoneButtons = s.buttonsOnScreen;
+            }
+        }
+    }
+
+    private void SelectApp(Image i)
+    {
+        i.color = Color.black;
     }
 
 }
@@ -113,6 +160,8 @@ public class PhoneScreen
     public List<PhoneButton> buttonsOnScreen = new List<PhoneButton>();
     public string name;
     public int index = 999;
+
+    public int[] thisScreenDimensions = new int[2];
 
     public int[] CalculateHeight()
     {
