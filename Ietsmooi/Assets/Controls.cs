@@ -199,6 +199,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PhoneNavigate"",
+                    ""type"": ""Value"",
+                    ""id"": ""af704481-5930-4b7d-b53a-a1bd19aecc9b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -236,31 +245,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""8180e8bd-4097-4f4e-ab88-4523101a6ce9"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""down"",
                     ""id"": ""320bffee-a40b-4347-ac70-c210eb8bc73a"",
                     ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""1c5327b5-f71c-4f60-99c7-4e737386f1d1"",
-                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -280,31 +267,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""2e46982e-44cc-431b-9f0b-c11910bf467a"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""right"",
                     ""id"": ""fcfe95b8-67b9-4526-84b5-5d0bc98d6400"",
                     ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""77bff152-3580-4b21-b6de-dcd0c7e41164"",
-                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -619,6 +584,61 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""OpenPhone"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""e2b25ee8-daa6-42a9-8268-4f0806a2739c"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PhoneNavigate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""d751bb4e-b379-428f-936c-38cf95330f6c"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PhoneNavigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""fac48f2a-0707-42df-894e-f0dd7999160f"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PhoneNavigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""bc11d6bf-3fe2-4f4b-be8f-42e05c8c55c3"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PhoneNavigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""c29e839a-8acd-44fb-9640-0468c38426b6"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PhoneNavigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -1469,6 +1489,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Map = m_Player.FindAction("Map", throwIfNotFound: true);
         m_Player_Back = m_Player.FindAction("Back", throwIfNotFound: true);
         m_Player_OpenPhone = m_Player.FindAction("OpenPhone", throwIfNotFound: true);
+        m_Player_PhoneNavigate = m_Player.FindAction("PhoneNavigate", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1581,6 +1602,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Map;
     private readonly InputAction m_Player_Back;
     private readonly InputAction m_Player_OpenPhone;
+    private readonly InputAction m_Player_PhoneNavigate;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1640,6 +1662,10 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/OpenPhone".
         /// </summary>
         public InputAction @OpenPhone => m_Wrapper.m_Player_OpenPhone;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/PhoneNavigate".
+        /// </summary>
+        public InputAction @PhoneNavigate => m_Wrapper.m_Player_PhoneNavigate;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1702,6 +1728,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @OpenPhone.started += instance.OnOpenPhone;
             @OpenPhone.performed += instance.OnOpenPhone;
             @OpenPhone.canceled += instance.OnOpenPhone;
+            @PhoneNavigate.started += instance.OnPhoneNavigate;
+            @PhoneNavigate.performed += instance.OnPhoneNavigate;
+            @PhoneNavigate.canceled += instance.OnPhoneNavigate;
         }
 
         /// <summary>
@@ -1749,6 +1778,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @OpenPhone.started -= instance.OnOpenPhone;
             @OpenPhone.performed -= instance.OnOpenPhone;
             @OpenPhone.canceled -= instance.OnOpenPhone;
+            @PhoneNavigate.started -= instance.OnPhoneNavigate;
+            @PhoneNavigate.performed -= instance.OnPhoneNavigate;
+            @PhoneNavigate.canceled -= instance.OnPhoneNavigate;
         }
 
         /// <summary>
@@ -2262,6 +2294,13 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnOpenPhone(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "PhoneNavigate" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPhoneNavigate(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
