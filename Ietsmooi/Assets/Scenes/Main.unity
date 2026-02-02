@@ -587,6 +587,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6275424147032223515, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275424147032223515, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_LinearDamping
       value: 2
       objectReference: {fileID: 0}

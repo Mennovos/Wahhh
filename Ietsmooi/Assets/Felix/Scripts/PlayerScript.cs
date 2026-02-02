@@ -35,6 +35,7 @@ public class PlayerScript : MonoBehaviour, IDataPersistence
     {
         Idle = 0,
         Walk = 1,
+        Jump = 2    
     }
     private int pressed;
     private void Awake()
@@ -137,17 +138,22 @@ public class PlayerScript : MonoBehaviour, IDataPersistence
 
     public void Jump()
     {
-        if (grounded)
+        if (curAction != Actions.Jump)
         {
-            if (horse.hasHorse == true)
+            curAction = Actions.Jump;
+            animator.SetInteger("Action", (int)curAction);
+            if (grounded)
             {
-                rb.AddForce(Vector3.up * 3500f);
+                if (horse.hasHorse == true)
+                {
+                    rb.AddForce(Vector3.up * 3500f);
+                }
+                else
+                {
+                    rb.AddForce(Vector3.up * 3000f);
+                }
+                grounded = false;
             }
-            else
-            {
-                rb.AddForce(Vector3.up * 3000f);
-            }
-            grounded = false;
         }
     }
 
