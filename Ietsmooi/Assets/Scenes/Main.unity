@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 990210296}
     - target: {fileID: 1615341595940782095, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: speed
-      value: 150
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1615341595940782095, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: Settings
@@ -587,12 +587,32 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6275424147032223515, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275424147032223515, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 6275424147032223515, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_ImplicitCom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275424147032223515, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275424147032223515, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_LinearDamping
-      value: 2
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275424147032223515, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_AngularDamping
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275424147032223515, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
+      propertyPath: m_CenterOfMass.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7311416443876566663, guid: d8d7e48392351d74d9fbc198c4a71828, type: 3}
       propertyPath: m_IsActive

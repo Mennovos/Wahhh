@@ -76,7 +76,7 @@ public class PlayerScript : MonoBehaviour, IDataPersistence
 
         dir = moveInput.x * camRight + moveInput.y * camForward;
 
-        rb.AddForce(dir * speed * Time.deltaTime, ForceMode.Impulse);
+        rb.AddForce(dir * speed * Time.deltaTime, ForceMode.VelocityChange);
 
         if (dir.sqrMagnitude < 0.01f)
         {
@@ -114,11 +114,11 @@ public class PlayerScript : MonoBehaviour, IDataPersistence
         //horese speed adjustment
         if (horse.hasHorse == true)
         {
-            speed = 300f;
+            speed = 70f;
         }
         else
         {
-            speed = 150f;
+            speed = 35f;
         }
 
     }
