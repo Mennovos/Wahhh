@@ -27,15 +27,17 @@ public class PlayerScript : MonoBehaviour, IDataPersistence
     public Actions curAction;
     public bool isInteracting;
 
-
     // tijdelijke health
     public int health = 100;
-   
+
+    // Reference to the VirusMeter (optional). If present, player speed will be modified by it.
+    private VirusMeter virusMeter;
+
     public enum Actions
     {
         Idle = 0,
         Walk = 1,
-        Jump = 2    
+        Jump = 2
     }
     private int pressed;
     private void Awake()
@@ -57,6 +59,8 @@ public class PlayerScript : MonoBehaviour, IDataPersistence
         Settings.SetActive(false);
 
         horse = FindFirstObjectByType<Horse>();
+
+        virusMeter = GetComponent<VirusMeter>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -111,16 +115,26 @@ public class PlayerScript : MonoBehaviour, IDataPersistence
             }
         }
 
-        //horese speed adjustment
+        // horse base speed
+        float baseSpeed;
         if (horse.hasHorse == true)
         {
-            speed = 70f;
+            baseSpeed = 70f;
         }
         else
         {
-            speed = 35f;
+            baseSpeed = 35f;
         }
 
+        // If a VirusMeter is attached, use it to modify the base speed
+        if (virusMeter != null)
+        {
+            speed = virusMeter.ModifiedSpeed(baseSpeed);
+        }
+        else
+        {
+            speed = baseSpeed;
+        }
     }
 
     public void Move(InputAction.CallbackContext context)

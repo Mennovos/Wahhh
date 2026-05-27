@@ -7,7 +7,7 @@ public class Pickup : MonoBehaviour, IDataPersistence
     [SerializeField] private GameObject visual;
     [SerializeField] private string id;
 
-    private bool collected = false;
+    protected bool collected = false;
     
     //Makes sure each pickup has a unique ID
     [ContextMenu("Generate guid for id")]
